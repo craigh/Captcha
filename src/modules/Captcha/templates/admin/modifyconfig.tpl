@@ -20,6 +20,10 @@
 			<label for="exemptAdmin">{gt text='Exempt admin from captcha requirement'}</label>
 			<input type="checkbox" value="1" id="exemptAdmin" name="exemptAdmin"{if $modvars.Captcha.exemptAdmin eq true} checked="checked"{/if}/>
         </div>
+        <div class="z-formrow">
+            <label for="captchaTheme">{gt text='Theme'}</label>
+            <span>{html_options id='captchaTheme' name='captchaTheme' options=$themenames selected=$modvars.Captcha.captchaTheme}</span>
+        </div>
     </fieldset>
     <div class="z-buttons z-formbuttons">
         {button src="button_ok.png" set="icons/extrasmall" __alt="Save" __title="Save" __text="Save"}

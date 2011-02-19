@@ -33,6 +33,14 @@ class Captcha_Controller_Admin extends Zikula_Controller
         if (!SecurityUtil::checkPermission('Captcha::', '::', ACCESS_ADMIN)) {
             return LogUtil::registerPermissionError();
         }
+        $themenames = array(
+            'red' => 'Red',
+            'white' => 'White',
+            'blackglass' => 'Black Glass',
+            'clean' => 'Clean',
+            //'custom' => 'Custom',
+        );
+        $this->view->assign('themenames', $themenames);
         return $this->view->fetch('admin/modifyconfig.tpl');
     }
     /**
@@ -44,11 +52,11 @@ class Captcha_Controller_Admin extends Zikula_Controller
         if (!SecurityUtil::checkPermission('Captcha::', '::', ACCESS_ADMIN)) {
             return LogUtil::registerPermissionError();
         }
-
         $modvars = array();
         $modvars['privatekey'] = FormUtil::getPassedValue('privatekey', '');
         $modvars['publickey'] = FormUtil::getPassedValue('publickey', '');
         $modvars['exemptAdmin'] = FormUtil::getPassedValue('exemptAdmin', 0);
+        $modvars['captchaTheme'] = FormUtil::getPassedValue('captchaTheme', 'red');
 
         // set the new variables
         $this->setVars($modvars);

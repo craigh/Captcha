@@ -27,6 +27,7 @@ class Captcha_Installer extends Zikula_Installer
         $this->setVar('publickey', '');
         $this->setVar('privatekey', '');
         $this->setVar('exemptAdmin', 0);
+        $this->setVar('captchaTheme', 'red');
         HookUtil::registerHookProviderBundles($this->version);
 
         return true;
