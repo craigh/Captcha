@@ -102,10 +102,13 @@ class Captcha_HookHandlers extends Zikula_HookHandler
 
         $this->validation = new Zikula_Provider_HookValidation('data', array());
 
-        $resp = recaptcha_check_answer ($this->privatekey, $_SERVER["REMOTE_ADDR"], $challenge, $response);
-
-        if (!$resp->is_valid) {
-            $this->validation->addError('captcha', $resp->error);
+        if (!empty($challenge) && !empty($response)) {
+            $resp = recaptcha_check_answer ($this->privatekey, $_SERVER["REMOTE_ADDR"], $challenge, $response);
+            if (!$resp->is_valid) {
+                $this->validation->addError('captcha', $resp->error);
+            }
+        } else {
+            $this->validation->addError('captcha', __('Captcha values invalid (empty).', ZLanguage::getModuleDomain('Captcha')));
         }
 
         $z_event->data->set('hookhandler.captcha.ui.edit', $this->validation);
