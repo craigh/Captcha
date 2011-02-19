@@ -48,6 +48,7 @@ class Captcha_Controller_Admin extends Zikula_Controller
         $modvars = array();
         $modvars['privatekey'] = FormUtil::getPassedValue('privatekey', '');
         $modvars['publickey'] = FormUtil::getPassedValue('publickey', '');
+        $modvars['exemptAdmin'] = FormUtil::getPassedValue('exemptAdmin', 0);
 
         // set the new variables
         $this->setVars($modvars);

@@ -35,6 +35,12 @@ class Captcha_HookHandlers extends Zikula_HookHandler
     private $publickey;
 
     /**
+     * exempt Admin from captcha check
+     * @var boolean
+     */
+    private $exemptAdmin;
+
+    /**
      * Post constructor hook.
      *
      * @return void
@@ -44,6 +50,7 @@ class Captcha_HookHandlers extends Zikula_HookHandler
         $this->view = Zikula_View::getInstance("Captcha");
         $this->publickey = ModUtil::getVar('Captcha', 'publickey');
         $this->privatekey = ModUtil::getVar('Captcha', 'privatekey');
+        $this->exemptAdmin = ModUtil::getVar('Captcha', 'exemptAdmin') && SecurityUtil::checkPermission('Captcha::', '::', ACCESS_ADMIN);
         require_once (DataUtil::formatForOS('modules/Captcha/lib/vendor/' . $this->captchaLibDirectory . '/recaptchalib.php'));
     }
 
@@ -61,6 +68,9 @@ class Captcha_HookHandlers extends Zikula_HookHandler
             return;
         }
         if (empty($this->privatekey) || empty($this->publickey)) {
+            return;
+        }
+        if ($this->exemptAdmin) {
             return;
         }
 
@@ -82,6 +92,9 @@ class Captcha_HookHandlers extends Zikula_HookHandler
     public function validate_edit(Zikula_Event $z_event)
     {
         if (empty($this->privatekey) || empty($this->publickey)) {
+            return;
+        }
+        if ($this->exemptAdmin) {
             return;
         }
         $challenge = FormUtil::getPassedValue('recaptcha_challenge_field', null, 'POST');

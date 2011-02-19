@@ -16,6 +16,10 @@
 			<label for="publickey">{gt text='Public reCaptcha key'}</label>
 			<input type="text" value="{$modvars.Captcha.publickey}" id="publickey" name="publickey" />
         </div>
+        <div class="z-formrow">
+			<label for="exemptAdmin">{gt text='Exempt admin from captcha requirement'}</label>
+			<input type="checkbox" value="1" id="exemptAdmin" name="exemptAdmin"{if $modvars.Captcha.exemptAdmin eq true} checked="checked"{/if}/>
+        </div>
     </fieldset>
     <div class="z-buttons z-formbuttons">
         {button src="button_ok.png" set="icons/extrasmall" __alt="Save" __title="Save" __text="Save"}
