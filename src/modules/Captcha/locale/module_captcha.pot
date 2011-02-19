@@ -1,0 +1,76 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Zikula 1.x\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2011-02-19 06:05+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: lib/Captcha/Api/Admin.php:30
+msgid "Settings"
+msgstr ""
+
+#: lib/Captcha/Controller/Admin.php:58
+msgid "Done! Updated the Captcha configuration."
+msgstr ""
+
+#: lib/Captcha/Version.php:18 templates/admin/menu.tpl:3
+msgid "Captcha"
+msgstr ""
+
+#. !used in URL - nospaces, no special chars, lcase
+#: lib/Captcha/Version.php:19
+msgid "captcha"
+msgstr ""
+
+#: lib/Captcha/Version.php:20
+msgid "Captcha hook module"
+msgstr ""
+
+#: lib/Captcha/Version.php:36
+msgid "Captcha Hook"
+msgstr ""
+
+#: templates/admin/modifyconfig.tpl:4
+msgid "Captcha settings"
+msgstr ""
+
+#: templates/admin/modifyconfig.tpl:4
+msgid "version"
+msgstr ""
+
+#: templates/admin/modifyconfig.tpl:9
+msgid "General settings"
+msgstr ""
+
+#: templates/admin/modifyconfig.tpl:10
+#, php-format
+msgid ""
+"You must obtain public and private keys by registering an account at %s."
+msgstr ""
+
+#: templates/admin/modifyconfig.tpl:12
+msgid "Private reCaptcha key"
+msgstr ""
+
+#: templates/admin/modifyconfig.tpl:16
+msgid "Public reCaptcha key"
+msgstr ""
+
+#: templates/admin/modifyconfig.tpl:21
+msgid "Save"
+msgstr ""
+
+#: templates/admin/modifyconfig.tpl:22
+msgid "Cancel"
+msgstr ""
