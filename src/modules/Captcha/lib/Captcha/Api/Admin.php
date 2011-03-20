@@ -10,7 +10,7 @@
 /**
  * Class to control Admin interface
  */
-class Captcha_Api_Admin extends Zikula_Api
+class Captcha_Api_Admin extends Zikula_AbstractApi
 {
     /**
      * Get available admin panel links

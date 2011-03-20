@@ -7,7 +7,7 @@
  * @license MIT
  */
 
-class Captcha_HookHandlers extends Zikula_HookHandler
+class Captcha_HookHandlers extends Zikula_Hook_AbstractHandler
 {
     /**
      * Name of the directory containing the library

@@ -10,7 +10,7 @@
 /**
  * Class to control Installer interface
  */
-class Captcha_Installer extends Zikula_Installer
+class Captcha_Installer extends Zikula_AbstractInstaller
 {
     /**
      * Initializes a new install

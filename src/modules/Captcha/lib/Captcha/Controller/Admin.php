@@ -10,7 +10,7 @@
 /**
  * Class to control Admin interface
  */
-class Captcha_Controller_Admin extends Zikula_Controller
+class Captcha_Controller_Admin extends Zikula_AbstractController
 {
     /**
      * the main administration function

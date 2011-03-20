@@ -10,7 +10,7 @@
 /**
  * Class to control Version information
  */
-class Captcha_Version extends Zikula_Version
+class Captcha_Version extends Zikula_AbstractVersion
 {
     public function getMetaData()
     {
@@ -33,7 +33,7 @@ class Captcha_Version extends Zikula_Version
 
     protected function setupHookBundles()
     {
-        $bundle = new Zikula_Version_HookProviderBundle('modulehook_area.captcha.event', $this->__('Captcha Hook'));
+        $bundle = new Zikula_AbstractVersion_HookProviderBundle('modulehook_area.captcha.event', $this->__('Captcha Hook'));
         $bundle->addHook('hookhandler.captcha.ui.edit', 'ui.edit', 'Captcha_HookHandlers', 'ui_edit', 'captcha.service', 10);
         $bundle->addHook('hookhandler.captcha.validate.edit', 'validate.edit', 'Captcha_HookHandlers', 'validate_edit', 'captcha.service', 10);
         $this->registerHookProviderBundle($bundle);
