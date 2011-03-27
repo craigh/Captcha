@@ -45,9 +45,7 @@ class Captcha_Installer extends Zikula_AbstractInstaller
      */
     public function upgrade($oldversion)
     {
-        if (!SecurityUtil::checkPermission('Captcha::', '::', ACCESS_ADMIN)) {
-            return LogUtil::registerPermissionError();
-        }
+        $this->throwForbiddenUnless(SecurityUtil::checkPermission('Captcha::', '::', ACCESS_ADMIN), LogUtil::getErrorMsgPermission());
     
         switch ($oldversion) {
             case '1.0.0':

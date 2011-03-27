@@ -19,9 +19,8 @@ class Captcha_Controller_Admin extends Zikula_AbstractController
      */
     public function main()
     {
-        if (!SecurityUtil::checkPermission('Captcha::', '::', ACCESS_ADMIN)) {
-            return LogUtil::registerPermissionError();
-        }
+        $this->throwForbiddenUnless(SecurityUtil::checkPermission('Captcha::', '::', ACCESS_ADMIN), LogUtil::getErrorMsgPermission());
+
         return $this->modifyconfig();
     }
     /**
@@ -30,9 +29,8 @@ class Captcha_Controller_Admin extends Zikula_AbstractController
      */
     public function modifyconfig()
     {
-        if (!SecurityUtil::checkPermission('Captcha::', '::', ACCESS_ADMIN)) {
-            return LogUtil::registerPermissionError();
-        }
+        $this->throwForbiddenUnless(SecurityUtil::checkPermission('Captcha::', '::', ACCESS_ADMIN), LogUtil::getErrorMsgPermission());
+
         $themenames = array(
             'red' => 'Red',
             'white' => 'White',
@@ -51,9 +49,8 @@ class Captcha_Controller_Admin extends Zikula_AbstractController
     {
         $this->checkCsrfToken();
         
-        if (!SecurityUtil::checkPermission('Captcha::', '::', ACCESS_ADMIN)) {
-            return LogUtil::registerPermissionError();
-        }
+        $this->throwForbiddenUnless(SecurityUtil::checkPermission('Captcha::', '::', ACCESS_ADMIN), LogUtil::getErrorMsgPermission());
+
         $modvars = array();
         $modvars['privatekey'] = FormUtil::getPassedValue('privatekey', '');
         $modvars['publickey'] = FormUtil::getPassedValue('publickey', '');
