@@ -49,6 +49,8 @@ class Captcha_Controller_Admin extends Zikula_AbstractController
      */
     public function updateconfig()
     {
+        $this->checkCsrfToken();
+        
         if (!SecurityUtil::checkPermission('Captcha::', '::', ACCESS_ADMIN)) {
             return LogUtil::registerPermissionError();
         }

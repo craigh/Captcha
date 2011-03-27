@@ -4,7 +4,7 @@
 <h2>{gt text="Captcha settings"}&nbsp;({gt text="version"}&nbsp;{$modinfo.version})</h2>
 <form class="z-form" action="{modurl modname="Captcha" type="admin" func="updateconfig"}" method="post" enctype="application/x-www-form-urlencoded">
     <div>
-    <input type="hidden" name="authid" value="{insert name="generateauthkey" module="Captcha"}" />
+    <input type="hidden" name="csrftoken" value="{insert name="csrftoken"}" />
     <fieldset>
         <legend>{gt text='General settings'}</legend>
         <p class="z-informationmsg">{gt text='You must obtain public and private keys by registering an account at %s.' tag1="<a href='https://www.google.com/recaptcha/admin/create' target=_blank>the reCaptcha site</a>"}</p>
