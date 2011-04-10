@@ -20,8 +20,7 @@ class Captcha_Controller_Admin extends Zikula_AbstractController
     public function main()
     {
         $this->throwForbiddenUnless(SecurityUtil::checkPermission('Captcha::', '::', ACCESS_ADMIN), LogUtil::getErrorMsgPermission());
-
-        return $this->modifyconfig();
+		$this->redirect(ModUtil::url('Captcha', 'admin', 'modifyconfig'));
     }
     /**
      * @desc present administrator options to change module configuration
