@@ -1,3 +1,4 @@
+{nocache}
 <script type="text/javascript">
 var RecaptchaOptions = {
     lang : '{{lang}}',
@@ -5,3 +6,4 @@ var RecaptchaOptions = {
 };
 </script>
 {$html}
+{/nocache}
