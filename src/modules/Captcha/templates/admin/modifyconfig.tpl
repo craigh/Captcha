@@ -1,6 +1,6 @@
 {include file="admin/menu.tpl"}
 <div class="z-admincontainer">
-<div class="z-adminpageicon">{img modname='core' set='icons/large' src='agt_internet.png'}</div>
+<div class="z-adminpageicon">{img modname='Captcha' src='admin.gif'}</div>
 <h2>{gt text="Captcha settings"}&nbsp;({gt text="version"}&nbsp;{$modinfo.version})</h2>
 <form class="z-form" action="{modurl modname="Captcha" type="admin" func="updateconfig"}" method="post" enctype="application/x-www-form-urlencoded">
     <div>
