@@ -28,7 +28,7 @@ class Captcha_Installer extends Zikula_AbstractInstaller
         $this->setVar('privatekey', '');
         $this->setVar('exemptAdmin', 0);
         $this->setVar('captchaTheme', 'red');
-        HookUtil::registerHookProviderBundles($this->version);
+        HookUtil::registerProviderBundles($this->version->getHookProviderBundles());
 
         return true;
     }
@@ -67,7 +67,7 @@ class Captcha_Installer extends Zikula_AbstractInstaller
     public function uninstall()
     {
         $result = $this->delVars();
-        HookUtil::unregisterHookProviderBundles($this->version);
+        HookUtil::unregisterProviderBundles($this->version);
 
         return $result;
     }
