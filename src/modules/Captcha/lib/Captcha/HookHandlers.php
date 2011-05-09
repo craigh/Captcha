@@ -100,7 +100,7 @@ class Captcha_HookHandlers extends Zikula_Hook_AbstractHandler
         $challenge = FormUtil::getPassedValue('recaptcha_challenge_field', null, 'POST');
         $response = FormUtil::getPassedValue('recaptcha_response_field', null, 'POST');
 
-        $this->validation = new Zikula_Provider_HookValidation('data', array());
+        $this->validation = new Zikula_Hook_ValidationReponse('data', array());
 
         if (!empty($challenge) && !empty($response)) {
             $resp = recaptcha_check_answer ($this->privatekey, $_SERVER["REMOTE_ADDR"], $challenge, $response);
