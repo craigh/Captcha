@@ -78,7 +78,7 @@ class Captcha_HookHandlers extends Zikula_Hook_AbstractHandler
         $this->view->assign('html', $html);
 
         // add this response to the event stack
-        $area = 'modulehook_area.captcha.event';
+        $area = 'provider_area.ui.captcha.event';
         $hook->setResponse(new Zikula_Response_DisplayHook($area, $this->view, 'hooks/edit.tpl'));
     }
 
