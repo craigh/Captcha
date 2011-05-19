@@ -33,9 +33,9 @@ class Captcha_Version extends Zikula_AbstractVersion
 
     protected function setupHookBundles()
     {
-        $bundle = new Zikula_HookManager_ProviderBundle($this->name, 'provider_area.ui.captcha.event', 'ui', $this->__('Captcha Hook'));
-        $bundle->addHook('hookhandler.captcha.ui.edit', 'ui.edit', 'Captcha_HookHandlers', 'ui_edit', 'captcha.service', 10);
-        $bundle->addHook('hookhandler.captcha.validate.edit', 'validate.edit', 'Captcha_HookHandlers', 'validate_edit', 'captcha.service', 10);
+        $bundle = new Zikula_HookManager_ProviderBundle($this->name, 'provider.captcha.ui_hooks.service', 'ui_hooks', $this->__('Captcha Service Display'));
+        $bundle->addServiceHandler('form_edit', 'Captcha_HookHandlers', 'uiEdit', 'captcha.service');
+        $bundle->addServiceHandler('validate_edit', 'Captcha_HookHandlers', 'validateEdit', 'captcha.service');
         $this->registerHookProviderBundle($bundle);
     }
 } // end class def

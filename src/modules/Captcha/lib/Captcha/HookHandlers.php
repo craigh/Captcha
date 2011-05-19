@@ -61,7 +61,7 @@ class Captcha_HookHandlers extends Zikula_Hook_AbstractHandler
      *
      * @return void
      */
-    public function ui_edit(Zikula_DisplayHook $hook)
+    public function uiEdit(Zikula_DisplayHook $hook)
     {
         // Security check
         if (!SecurityUtil::checkPermission('Captcha::', '::', ACCESS_COMMENT)) {
@@ -78,7 +78,7 @@ class Captcha_HookHandlers extends Zikula_Hook_AbstractHandler
         $this->view->assign('html', $html);
 
         // add this response to the event stack
-        $area = 'provider_area.ui.captcha.event';
+        $area = 'provider.captcha.ui_hooks.service';
         $hook->setResponse(new Zikula_Response_DisplayHook($area, $this->view, 'hooks/edit.tpl'));
     }
 
@@ -89,7 +89,7 @@ class Captcha_HookHandlers extends Zikula_Hook_AbstractHandler
      *
      * @return void
      */
-    public function validate_edit(Zikula_ValidationHook $hook)
+    public function validateEdit(Zikula_ValidationHook $hook)
     {
         if (empty($this->privatekey) || empty($this->publickey)) {
             return;
@@ -111,6 +111,6 @@ class Captcha_HookHandlers extends Zikula_Hook_AbstractHandler
             $this->validation->addError('captcha', __('Captcha values invalid (empty).', ZLanguage::getModuleDomain('Captcha')));
         }
 
-        $hook->setValidator('hookhandler.captcha.ui.edit', $this->validation);
+        $hook->setValidator('provider.captcha.ui_hooks.service', $this->validation);
     }
 }
