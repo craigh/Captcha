@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Zikula 1.x\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-02-19 06:05+0000\n"
+"POT-Creation-Date: 2011-06-21 20:12+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -16,11 +16,15 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
+#: lib/Captcha/HookHandlers.php:111
+msgid "Captcha values invalid (empty)."
+msgstr ""
+
 #: lib/Captcha/Api/Admin.php:30
 msgid "Settings"
 msgstr ""
 
-#: lib/Captcha/Controller/Admin.php:58
+#: lib/Captcha/Controller/Admin.php:65
 msgid "Done! Updated the Captcha configuration."
 msgstr ""
 
@@ -38,7 +42,7 @@ msgid "Captcha hook module"
 msgstr ""
 
 #: lib/Captcha/Version.php:36
-msgid "Captcha Hook"
+msgid "Captcha Service Display"
 msgstr ""
 
 #: templates/admin/modifyconfig.tpl:4
@@ -67,10 +71,18 @@ msgstr ""
 msgid "Public reCaptcha key"
 msgstr ""
 
-#: templates/admin/modifyconfig.tpl:21
+#: templates/admin/modifyconfig.tpl:20
+msgid "Exempt admin from captcha requirement"
+msgstr ""
+
+#: templates/admin/modifyconfig.tpl:24
+msgid "Theme"
+msgstr ""
+
+#: templates/admin/modifyconfig.tpl:29
 msgid "Save"
 msgstr ""
 
-#: templates/admin/modifyconfig.tpl:22
+#: templates/admin/modifyconfig.tpl:30
 msgid "Cancel"
 msgstr ""
