@@ -1,7 +1,9 @@
-{include file="admin/menu.tpl"}
-<div class="z-admincontainer">
-<div class="z-adminpageicon">{img modname='Captcha' src='admin.gif'}</div>
-<h2>{gt text="Captcha settings"}&nbsp;({gt text="version"}&nbsp;{$modinfo.version})</h2>
+{adminheader}
+<div class="z-admin-content-pagetitle">
+    {icon type="config" size="small"}
+    <h3>{gt text="Captcha settings"}</h3>
+</div>
+
 <form class="z-form" action="{modurl modname="Captcha" type="admin" func="updateconfig"}" method="post" enctype="application/x-www-form-urlencoded">
     <div>
     <input type="hidden" name="csrftoken" value="{insert name="csrftoken"}" />
@@ -31,4 +33,4 @@
     </div>
     </div>
 </form>
-</div><!-- /z-admincontainer -->
+{adminfooter}
