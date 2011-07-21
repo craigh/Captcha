@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Zikula 1.x\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-06-21 20:12+0000\n"
+"POT-Creation-Date: 2011-07-21 21:06+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -28,7 +28,7 @@ msgstr ""
 msgid "Done! Updated the Captcha configuration."
 msgstr ""
 
-#: lib/Captcha/Version.php:18 templates/admin/menu.tpl:3
+#: lib/Captcha/Version.php:18
 msgid "Captcha"
 msgstr ""
 
@@ -49,40 +49,36 @@ msgstr ""
 msgid "Captcha settings"
 msgstr ""
 
-#: templates/admin/modifyconfig.tpl:4
-msgid "version"
-msgstr ""
-
-#: templates/admin/modifyconfig.tpl:9
+#: templates/admin/modifyconfig.tpl:11
 msgid "General settings"
 msgstr ""
 
-#: templates/admin/modifyconfig.tpl:10
+#: templates/admin/modifyconfig.tpl:12
 #, php-format
 msgid ""
 "You must obtain public and private keys by registering an account at %s."
 msgstr ""
 
-#: templates/admin/modifyconfig.tpl:12
+#: templates/admin/modifyconfig.tpl:14
 msgid "Private reCaptcha key"
 msgstr ""
 
-#: templates/admin/modifyconfig.tpl:16
+#: templates/admin/modifyconfig.tpl:18
 msgid "Public reCaptcha key"
 msgstr ""
 
-#: templates/admin/modifyconfig.tpl:20
+#: templates/admin/modifyconfig.tpl:22
 msgid "Exempt admin from captcha requirement"
 msgstr ""
 
-#: templates/admin/modifyconfig.tpl:24
+#: templates/admin/modifyconfig.tpl:26
 msgid "Theme"
 msgstr ""
 
-#: templates/admin/modifyconfig.tpl:29
+#: templates/admin/modifyconfig.tpl:31
 msgid "Save"
 msgstr ""
 
-#: templates/admin/modifyconfig.tpl:30
+#: templates/admin/modifyconfig.tpl:32
 msgid "Cancel"
 msgstr ""
