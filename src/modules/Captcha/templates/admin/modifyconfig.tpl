@@ -19,7 +19,7 @@
 			<input type="text" value="{$modvars.Captcha.publickey}" id="publickey" name="publickey" />
         </div>
         <div class="z-formrow">
-			<label for="exemptAdmin">{gt text='Exempt admin from captcha requirement'}</label>
+			<label for="exemptAdmin">{gt text='Exclude users with Captcha admin permission from captcha validation'}</label>
 			<input type="checkbox" value="1" id="exemptAdmin" name="exemptAdmin"{if $modvars.Captcha.exemptAdmin eq true} checked="checked"{/if}/>
         </div>
         <div class="z-formrow">
