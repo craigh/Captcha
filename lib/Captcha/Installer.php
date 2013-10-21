@@ -67,7 +67,7 @@ class Captcha_Installer extends Zikula_AbstractInstaller
     public function uninstall()
     {
         $result = $this->delVars();
-        HookUtil::unregisterProviderBundles($this->version);
+        HookUtil::unregisterProviderBundles($this->version->getHookProviderBundles());
 
         return $result;
     }
