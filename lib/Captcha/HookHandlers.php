@@ -63,10 +63,6 @@ class Captcha_HookHandlers extends Zikula_Hook_AbstractHandler
      */
     public function uiEdit(Zikula_DisplayHook $hook)
     {
-        // Security check
-        if (!SecurityUtil::checkPermission('Captcha::', '::', ACCESS_COMMENT)) {
-            return;
-        }
         if (empty($this->privatekey) || empty($this->publickey)) {
             return;
         }
