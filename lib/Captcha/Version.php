@@ -18,7 +18,7 @@ class Captcha_Version extends Zikula_AbstractVersion
         $meta['displayname']    = $this->__('Captcha');
         $meta['url']            = $this->__(/*!used in URL - nospaces, no special chars, lcase*/'captcha');
         $meta['description']    = $this->__('Captcha hook module');
-        $meta['version']        = '1.0.0';
+        $meta['version']        = '1.0.2';
 
         $meta['securityschema'] = array(
             'Captcha::'      => '::');
