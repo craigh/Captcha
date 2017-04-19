@@ -70,7 +70,8 @@ class Captcha_HookHandlers extends Zikula_Hook_AbstractHandler
             return;
         }
 
-        $html = recaptcha_get_html($this->publickey);
+        $https = System::serverGetVar('HTTPS');
+        $html = recaptcha_get_html($this->publickey, null, isset($https) && $https == 'on');
         $this->view->assign('html', $html);
 
         // add this response to the event stack
