@@ -31,11 +31,8 @@ class Captcha_Controller_Admin extends Zikula_AbstractController
         $this->throwForbiddenUnless(SecurityUtil::checkPermission('Captcha::', '::', ACCESS_ADMIN), LogUtil::getErrorMsgPermission());
 
         $themenames = array(
-            'red' => 'Red',
-            'white' => 'White',
-            'blackglass' => 'Black Glass',
-            'clean' => 'Clean',
-            //'custom' => 'Custom',
+            'light' => 'Light',
+            'dark' => 'Dark'
         );
         $this->view->assign('themenames', $themenames);
         return $this->view->fetch('admin/modifyconfig.tpl');
