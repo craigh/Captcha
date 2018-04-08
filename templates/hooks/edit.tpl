@@ -1,9 +1,4 @@
 {nocache}
-<script type="text/javascript">
-var RecaptchaOptions = {
-    lang : '{{lang}}',
-    theme : '{{$modvars.Captcha.captchaTheme}}'
-};
-</script>
-{$html}
+<script src='https://www.google.com/recaptcha/api.js?hl={$lang}'></script>
+<div class="g-recaptcha" data-sitekey="{$sitekey}" data-theme="{$modvars.Captcha.captchaTheme}"></div>
 {/nocache}

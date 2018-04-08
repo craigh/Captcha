@@ -14,7 +14,7 @@ class Captcha_HookHandlers extends Zikula_Hook_AbstractHandler
      * contains version number - edit on upgrade
      * @var string
      */
-    private $captchaLibDirectory = 'recaptcha-php-1.11';
+    private $captchaLibDirectory = 'google/recaptcha';
 
     /**
      * Zikula_View instance
@@ -71,8 +71,8 @@ class Captcha_HookHandlers extends Zikula_Hook_AbstractHandler
         }
 
         $https = System::serverGetVar('HTTPS');
-        $html = recaptcha_get_html($this->publickey, null, isset($https) && $https == 'on');
-        $this->view->assign('html', $html);
+        $this->view->assign('sitekey', $this->publickey);
+        $this->view->assign('lang', ZLanguage::getLanguageCode());
 
         // add this response to the event stack
         $area = 'provider.captcha.ui_hooks.service';
@@ -94,15 +94,18 @@ class Captcha_HookHandlers extends Zikula_Hook_AbstractHandler
         if ($this->exemptAdmin) {
             return;
         }
-        $challenge = FormUtil::getPassedValue('recaptcha_challenge_field', null, 'POST');
-        $response = FormUtil::getPassedValue('recaptcha_response_field', null, 'POST');
+
+        $recaptcha_response = FormUtil::getPassedValue('g-recaptcha-response', null, 'POST');
 
         $this->validation = new Zikula_Hook_ValidationResponse('data', array());
 
-        if (!empty($challenge) && !empty($response)) {
-            $resp = recaptcha_check_answer ($this->privatekey, $_SERVER["REMOTE_ADDR"], $challenge, $response);
-            if (!$resp->is_valid) {
-                $this->validation->addError('captcha', $resp->error);
+        if (!empty($recaptcha_response)) {
+            // check secret key
+            $reCaptcha = new ReCaptcha($this->privatekey);
+
+            $response = $reCaptcha->verifyResponse($_SERVER["REMOTE_ADDR"], $recaptcha_response);
+            if ($response == null || !$response->success) {
+                $this->validation->addError('captcha', __('Captcha values invalid. Error: ', ZLanguage::getModuleDomain('Captcha')) . (isset($response->errorCodes) ? $response->errorCodes : 'unknown'));
             }
         } else {
             $this->validation->addError('captcha', __('Captcha values invalid (empty).', ZLanguage::getModuleDomain('Captcha')));
