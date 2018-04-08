@@ -52,6 +52,7 @@ class Captcha_Installer extends Zikula_AbstractInstaller
             case '1.0.1':
             case '1.0.2':
             case '1.0.3':
+            case '1.0.4':
                 //future development
         }
     
